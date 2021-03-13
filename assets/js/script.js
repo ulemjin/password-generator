@@ -85,6 +85,11 @@ function writePassword() {
 
   passwordText.value = password;
 
+  // reset values, so user can generate new password without refreshing the page
+  charLength = 0;
+  main = [];
+  answer = [];
+  confirmMsg = [];
 }
 
 // Add event listener to generate button
