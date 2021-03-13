@@ -6,41 +6,41 @@ var specialChar = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_"];
 var main = [];
 var answer = [];
 var confirmMsg = [];
+var charLength = 0;
 
-var confirmLength = function() {
-  charLength = 0;
+var confirmLength = function () {
   while (charLength === 0) {
-    var charLength = prompt("How many characters in your password? Please enter a number between 8 and 128:");
-    if (charLength >=8 && charLength <= 128) {
+    charLength = prompt("How many characters in your password? Please enter a number between 8 and 128:");
+    if (charLength >= 8 && charLength <= 128) {
       alert("Great! You chose " + charLength + " characters in your password.");
       break;
-    } 
+    }
     alert("Oops! You have to pick a valid number. Please try again.");
     charLength = 0;
   }
   confirmCriteria();
 };
 
-var confirmCriteria = function() {
-  var confirmUpCase = confirm("Would you like UPPERCASE letters in your password?");
+var confirmCriteria = function () {
+  var confirmUpCase = confirm("Would you like -uppercase- letters in your password?");
   if (confirmUpCase) {
     main.push(upCase);
     confirmMsg.push("uppercase letters");
   };
 
-  var confirmLowCase = confirm("Would you like lowercase letters in your password?");
+  var confirmLowCase = confirm("Would you like -lowercase- letters in your password?");
   if (confirmLowCase) {
     main.push(lowCase);
     confirmMsg.push("lowercase letters");
   };
 
-  var confirmNumbers = confirm("Would you like n#mb3rs in your password?");
+  var confirmNumbers = confirm("Would you like -numbers- in your password?");
   if (confirmNumbers) {
     main.push(numbers);
     confirmMsg.push("numbers");
   };
 
-  var confirmSpecialChar = confirm("Would you like $pec!@l ch@r@cter$ in your password?");
+  var confirmSpecialChar = confirm("Would you like -special characters- in your password?");
   if (confirmSpecialChar) {
     main.push(specialChar);
     confirmMsg.push("special characters");
@@ -56,14 +56,19 @@ var confirmCriteria = function() {
   } else if (confirmMsg.length === 3) {
     alert("For your password you chose " + confirmMsg[0] + ", " + confirmMsg[1] + " and " + confirmMsg[2] + ".");
   } else {
-    alert("For your password you chose all of the criteria: uppercase, lowecase, numbers and special characters.");
+    alert("For your password you chose all of the criteria: uppercase, lowercase, numbers and special characters.");
   }
 };
 
-var generatePassword = function() {
+var generatePassword = function () {
   confirmLength();
   main = main.flat();
-  console.log(main);
+
+  for (i = 0; i < charLength; i++) {
+    var random = Math.floor(Math.random() * main.length);
+    answer.push(main[random]);
+  }
+  return password = answer.join('');
 };
 
 // Get references to the #generate element
