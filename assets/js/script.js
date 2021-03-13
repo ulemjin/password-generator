@@ -85,6 +85,8 @@ function writePassword() {
 
   passwordText.value = password;
 
+  alert("Your new password is '" + password + "'.");
+
   // reset values, so user can generate new password without refreshing the page
   charLength = 0;
   main = [];
