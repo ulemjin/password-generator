@@ -13,7 +13,7 @@ A random password generator that will provide the user with a new and secure pas
 
 ## Screenshots 
 <img width="1440" alt="password-generator-screenshot" src="https://user-images.githubusercontent.com/76715495/111013726-84a55100-836e-11eb-8c55-923830e314b6.png">
-__Pseudocode Diagram__
+**Pseudocode Diagram**
 <img width="613" alt="password-generator-pseudocode" src="https://user-images.githubusercontent.com/76715495/111013733-8ff87c80-836e-11eb-8048-71116161c215.png">
 
 ## Credits & Contribution
