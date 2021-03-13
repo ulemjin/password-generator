@@ -1,4 +1,4 @@
-// Assignment code here
+// Defining global variables
 var upCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",];
@@ -8,6 +8,7 @@ var answer = [];
 var confirmMsg = [];
 var charLength = 0;
 
+// Ask user's input for their desired length of password
 var confirmLength = function () {
   while (charLength === 0) {
     charLength = prompt("How many characters in your password? Please enter a number between 8 and 128:");
@@ -21,6 +22,7 @@ var confirmLength = function () {
   confirmCriteria();
 };
 
+// Ask user's input on what criteria their password should fulfill
 var confirmCriteria = function () {
   var confirmUpCase = confirm("Would you like -uppercase- letters in your password?");
   if (confirmUpCase) {
@@ -46,6 +48,7 @@ var confirmCriteria = function () {
     confirmMsg.push("special characters");
   }
 
+  // Validate user's choices for password criteria
   if (confirmMsg.length === 0) {
     alert("Oops! You have to pick at least one character type! Please try again");
     confirmCriteria();
@@ -60,6 +63,7 @@ var confirmCriteria = function () {
   }
 };
 
+// Generate user's password based on desired length and criteria using Math.random()
 var generatePassword = function () {
   confirmLength();
   main = main.flat();
